@@ -64,6 +64,7 @@ body {
 #mouth {
     margin-left: 12vw;
     margin-right: 12vw;
+    margin-bottom: 50px;
 }
 
 #upperLip {
@@ -87,7 +88,7 @@ body {
     margin-top: -50px;
     background: linear-gradient(to bottom, rgb(99, 20, 20) 10%, rgb(116, 10, 21) 80%);
     border-radius: 80px 80px 100% 100%;
-    z-index: 5;
+    z-index: 1;
     box-shadow: 0 2px 2px 1px rgba(128, 16, 27, 0.845);
 }
 
