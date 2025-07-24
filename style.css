@@ -1,0 +1,322 @@
+html {
+    background: rgb(140, 140, 141);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#eyeContainer {
+    display: flex;
+    z-index: 3;
+    height: 250px;
+}
+
+.eye {
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    background-color: rgb(255, 255, 255);
+    margin: 5vh auto;
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset -2px 3px 5px 5px rgba(0, 0, 0, 0.468);
+    transition: 1000ms ease-in-out;
+
+}
+
+.eye:hover {
+    transform: rotate(880deg);
+}
+
+#right {
+    transition: 2000ms ease-in-out;
+}
+
+.eye:has(#right:hover) {
+    transform: rotate(1700deg);
+    background: rgba(243, 99, 99, 0.826);
+}
+
+.eye:hover>#right {
+    transform: rotate(-1700deg);
+    box-shadow: 0 0 20px 5px rgb(255, 255, 255),
+        inset 15px -5px 5px 23px rgba(0, 0, 0, 0.941);
+    background: rgb(250, 215, 20);
+
+}
+
+.iris {
+    background-color: white;
+    transition: 2000ms cubic-bezier(0.47, 0, 0.745, 0.715);
+    position: relative;
+    height: 20px;
+    width: 20px;
+    margin-top: 45%;
+    margin-left: 25%;
+    border-radius: 50%;
+    top: 0px;
+    padding: 18px;
+    box-shadow: inset 15px -5px 5px 23px rgba(0, 0, 0, 0.941);
+}
+
+#mouth {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#upperLip {
+    position: relative;
+    height: 55px;
+    z-index: 2;
+    background: rgb(140, 140, 141);
+    border-radius: 0 0 55px 55px;
+    margin-bottom: -50px;
+    margin-left: 15vw;
+    margin-right: 3vw;
+    width: 66%;
+}
+
+#tongue {
+    display: flex;
+    align-self: center;
+    position: relative;
+    height: 60px;
+    width: 45%;
+    margin: 0 auto;
+    margin-top: -50px;
+    background: linear-gradient(to bottom, rgb(99, 20, 20) 10%, rgb(116, 10, 21) 80%);
+    border-radius: 80px 80px 100% 100%;
+    z-index: 5;
+    box-shadow: 0 2px 2px 1px rgba(128, 16, 27, 0.845);
+}
+
+#hoverZoneDiv {
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+    height: 40vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    padding-top: 55px;
+    border-radius: 0 0 150px 150px;
+    background-color: rgb(61, 14, 24);
+}
+
+.hoverZones {
+    transition: 300ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    transition: 100ms ease-in;
+    margin: 5px;
+    height: 140px;
+    background-color: rgb(255, 255, 244);
+    border-radius: 30px 30px 50% 50%;
+    z-index: 4;
+    max-width: 100px;
+}
+
+@media (max-width: 550px) {
+    .hoverZones {
+        margin: 5px;
+    }
+
+    #mouth {
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+
+    #upperLip {
+        margin-left: 15vw;
+        width: 67%;
+    }
+
+    .iris {
+        margin-top: 37%;
+        margin-left: 32%;
+    }
+}
+
+@media (max-width: 450px) {
+    .hoverZones {
+        margin: 5px;
+    }
+
+    #mouth {
+        margin-left: 0vw;
+        margin-right: 0vw;
+    }
+
+    #upperLip {
+        margin-left: 15vw;
+        width: 69%;
+    }
+
+    .iris {
+        margin-top: 35%;
+        margin-left: 38%;
+    }
+}
+
+#zone0 {
+    flex-grow: 0.5;
+}
+
+#zone1 {
+    border-radius: 5px 30px 50% 100%;
+    margin-top: -2px;
+}
+
+#zone2 {
+    border-radius: 60px 0px 90% 90%;
+    margin-top: -15px;
+    margin-bottom: 5px;
+}
+
+#zone3 {
+    border-radius: 5px 15px 70% 70%;
+}
+
+#zone4 {
+    border-radius: 5px 5px 70% 70%;
+}
+
+#zone5 {
+    border-radius: 15px 5px 70% 50%;
+}
+
+#zone6 {
+    border-radius: 30px 5px 100% 50%;
+    margin-top: -2px;
+}
+
+.hoverZones:hover {
+    background: rgb(239, 130, 108);
+    cursor: pointer;
+}
+
+body:has(.hoverZones:hover) .iris,
+body:has(.hoverZones:focus) .iris {
+    z-index: 2;
+    padding: 18px;
+}
+
+body:has(#zone1:hover) .iris,
+body:has(#zone1:focus) .iris {
+    transform: scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(-25px, 30px, 3px) skew(9deg, 0deg);
+    box-shadow: inset 10px -5px 3px 12px rgba(0, 0, 0, 0.941);
+}
+
+body:has(#zone1:hover) .eye:has(#left),
+body:has(#zone1:hover) .eye:has(#right) {
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset -10px 10px 5px 5px rgba(0, 0, 0, 0.468);
+}
+
+body:has(#zone2:hover) #left {
+    box-shadow: inset 10px -5px 2px 15px rgba(0, 0, 0, 0.941);
+    transform: scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(-10px, 25px, 3px) skew(6deg, 0deg);
+}
+
+body:has(#zone2:hover) .eye:has(#left),
+body:has(#zone2:hover) .eye:has(#right) {
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset -5px 5px 5px 5px rgba(0, 0, 0, 0.468);
+}
+
+body:has(#zone2:hover) #right {
+    box-shadow: inset 10px -5px 3px 18px rgba(0, 0, 0, 0.941);
+    transform: scale3d(0.95, 0.95, 1) rotateX(20deg) rotateY(0deg) rotateZ(0deg) translate3d(-22px, 30px, 3px) skew(10deg, 0deg);
+}
+
+body:has(#zone3:hover) #left {
+    box-shadow: inset 10px -5px 3px 18px rgba(0, 0, 0, 0.941);
+    transform: scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(5px, 28px, 3px) skew(6deg, -10deg);
+}
+
+body:has(#zone3:hover) #right {
+    box-shadow: inset 10px -5px 3px 18px rgba(0, 0, 0, 0.941);
+    transform: scale3d(1, 1.1, 1) rotateX(20deg) rotateY(0deg) rotateZ(0deg) translate3d(-10px, 28px, 3px) skew(9deg, 0deg);
+}
+
+body:has(#zone3:hover) .eye:has(#left) {
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset 0px 3px 5px 5px rgba(0, 0, 0, 0.468);
+}
+
+body:has(#zone3:hover) .eye:has(#right) {
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset 0px 5px 5px 5px rgba(0, 0, 0, 0.468);
+}
+
+body:has(#zone4:hover) #left {
+    box-shadow: inset 8px -2px 3px 21px rgba(0, 0, 0, 0.941);
+    transform: scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(9px, 28px, 3px) skew(9deg, -20deg);
+}
+
+body:has(#zone4:hover) #right {
+    box-shadow: inset 8px -2px 3px 21px rgba(0, 0, 0, 0.941);
+    transform: scale3d(1, 1.1, 1) rotateX(20deg) rotateY(0deg) rotateZ(0deg) translate3d(-5px, 28px, 3px) skew(9deg, 0deg);
+}
+
+body:has(#zone4:hover) .eye:has(#left) {
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset 5px 8px 5px 5px rgba(0, 0, 0, 0.468);
+}
+
+body:has(#zone4:hover) .eye:has(#right) {
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset 1px 5px 5px 5px rgba(0, 0, 0, 0.468);
+}
+
+body:has(#zone5:hover) #left {
+    box-shadow: inset 8px -2px 3px 21px rgba(0, 0, 0, 0.941);
+    transform: scale3d(0.9, 0.9, 0.9) rotateX(10deg) rotateY(0deg) rotateZ(0deg) translate3d(20px, 28px, 3px) skew(6deg, -20deg);
+}
+
+body:has(#zone5:hover) #right {
+    box-shadow: inset 12px -10px 3px 21px rgba(0, 0, 0, 0.941);
+    transform: scale3d(0.9, 0.9, 0.9) rotateX(20deg) rotateY(10deg) rotateZ(10deg) translate3d(-5px, 49px, 3px) skew(0deg, 6deg);
+}
+
+body:has(#zone5:hover) .eye:has(#left) {
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset 10px 12px 5px 5px rgba(0, 0, 0, 0.468);
+}
+
+body:has(#zone5:hover) .eye:has(#right) {
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset 0px 8px 5px 5px rgba(0, 0, 0, 0.468);
+}
+
+body:has(#zone6:hover) #left {
+    box-shadow: inset 8px -2px 3px 21px rgba(0, 0, 0, 0.941);
+    transform: scale3d(0.9, 0.9, 0.9) rotateX(0deg) rotateY(20deg) rotateZ(0deg) translate3d(25px, 28px, 3px) skew(6deg, -10deg);
+}
+
+body:has(#zone6:hover) #right {
+    box-shadow: inset 4px 0px 3px 21px rgba(0, 0, 0, 0.941);
+    transform: scale3d(0.8, 0.9, 0.9) rotateX(20deg) rotateY(20deg) rotateZ(0deg) translate3d(18px, 39px, 3px) skew(-16deg, 10deg);
+}
+
+body:has(#zone6:hover) .eye:has(#left) {
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset 15px 15px 5px 5px rgba(0, 0, 0, 0.468);
+}
+
+body:has(#zone6:hover) .eye:has(#right) {
+    box-shadow: inset 0 0 50px 5px grey,
+        0 0 50px 5px rgba(0, 0, 0, 0.55),
+        inset 10px 8px 5px 5px rgba(0, 0, 0, 0.468);
+}
