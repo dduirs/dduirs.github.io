@@ -62,8 +62,8 @@ body {
 }
 
 #mouth {
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: 12vw;
+    margin-right: 12vw;
 }
 
 #upperLip {
@@ -73,9 +73,8 @@ body {
     background: rgb(140, 140, 141);
     border-radius: 0 0 55px 55px;
     margin-bottom: -50px;
-    margin-left: 15vw;
-    margin-right: 3vw;
-    width: 66%;
+    margin-left: 5vw;
+    width: 87%;
 }
 
 #tongue {
@@ -97,8 +96,8 @@ body {
     flex-direction: row;
     z-index: 1;
     height: 40vh;
-    margin-left: 15vw;
-    margin-right: 15vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
     padding-top: 55px;
     border-radius: 0 0 150px 150px;
     background-color: rgb(61, 14, 24);
@@ -129,8 +128,8 @@ body {
     }
 
     #upperLip {
-        margin-left: 15vw;
-        width: 67%;
+        margin-left: 5vw;
+        width: 89%;
     }
 
     .iris {
@@ -150,8 +149,8 @@ body {
     }
 
     #upperLip {
-        margin-left: 15vw;
-        width: 69%;
+        margin-left: 5vw;
+        width: 90%;
     }
 
     .iris {
